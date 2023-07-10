@@ -1,0 +1,35 @@
+body {
+    
+    background-image:  url(img/bg.png);
+    background-color: #fecfef;
+    background-size: cover;
+}
+h1 {
+    color: white;
+}
+h2 {
+    color: white;
+    text-align: center;
+}
+h3 {
+    color:  white;
+    text-align: center;
+}
+p {
+    text-align: center;
+    font-weight: bold;
+    color: white;
+}
+form {
+    color: white;
+}
+button {
+    background-color: ff71d2;
+    border-color: #fd6ed0;
+}
+.brdThead {
+    background-color: #FF71D2;
+}
+tr {
+    text-align: center;
+}

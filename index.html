@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 7</title>
+    <link rel="icon" type="image/png" href="img/icon.png" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+    crossorigin="anonymous" />
+    <script src="script.js"></script>
+    <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <h1 class="display-1 text-center mb-4 mt-3" id="topo">Chá de Fraldas da Lais</h1>
+   
+    <div class="container mb-5" id="cadfralda">
+        <p class="mb-4">Olá! Adicione as informações sobre as fraldas que você irá trazer.</p>
+
+        <form name="register" onsubmit="event.preventDefault()">
+            <div class="row">
+                <div class="mb-3 col">
+                    <label for="conv" class="form-label">Nome da Convidada</label>
+                    <input 
+                    type="text" 
+                    class="form-control" 
+                    id="conv" 
+                    name="conv" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="mb-3 col">
+                    <label for="marcaFralda" class="form-label">Marca da Fralda</label>
+                    <input 
+                    type="text" 
+                    class="form-control" 
+                    id="marcaFralda" 
+                    name="marca" />
+                </div>
+
+                <div class="mb-3 col">
+                    <label for="linhaCat" class="form-label">Linha/Categoria</label>
+                    <input 
+                    type="text" 
+                    class="form-control" 
+                    id="linhaCat" 
+                    placeholder="Confort Sec, Supreme Care..."
+                    style="font-style: italic"
+                    name="linha"
+                    />
+                </div>
+            </div>
+            <div class="row">
+                <div class="mb-3 col">
+                    <label for="tamanhoPacote" class="form-label">Tamanho do Pacote</label>
+                    <input 
+                    type="text" 
+                    class="form-control" 
+                    id="tamanhoPacote" 
+                    placeholder="Pequeno, Médio, Jumbo..."
+                    style="font-style: italic"
+                    name="tpac"
+                    />
+                </div>
+
+                <div class="mb-3 col">
+                        <label for="quantidadeFraldas" class="form-label">Quantidade de Fraldas por Pacote</label>
+                        <input 
+                        type="text" 
+                        class="form-control" 
+                        id="quantidadeFraldas" 
+                        name="quantidade"
+                        />
+                </div>
+            </div>
+            <p class="mt-4">Tamanho da Fralda</p>
+            <div class="row mt-3">
+                <div class="col form-check ms-5">
+                    <input 
+                    type="radio" 
+                    id="radioRecem" 
+                    name="radio" 
+                    class="form-check-input" 
+                    value="RN"
+                    />
+                    <label for="radioRecem" class="form-label">RN</label>
+                </div>
+                <div class="col form-check">
+                    <input 
+                    type="radio" 
+                    id="radioPequena" 
+                    name="radio" 
+                    class="form-check-input"
+                    value="P"
+                    />
+                    <label for="radioPano" class="form-label">P</label>
+                </div>
+                <div class="col form-check">
+                    <input 
+                    type="radio" 
+                    id="radioMedia" 
+                    name="radio" 
+                    class="form-check-input"
+                    value="M"
+                    />
+                    <label for="radioMedia" class="form-label">M</label>
+                </div>
+                <div class="col form-check">
+                    <input 
+                    type="radio" 
+                    id="radioGrande" 
+                    name="radio" 
+                    class="form-check-input"
+                    value="G"
+                    />
+                    <label for="radioGrande" class="form-label">G</label>
+                </div>
+                <div class="col form-check">
+                    <input 
+                    type="radio" 
+                    id="radioExtra" 
+                    name="radio" 
+                    class="form-check-input"
+                    value="XG"
+                    />
+                    <label for="radioExtra" class="form-label">XG</label>
+                </div>
+                <div class="col form-check">
+                    <input 
+                    type="radio" 
+                    id="radioXxg" 
+                    name="radio" 
+                    class="form-check-input"
+                    value="XXG"
+                    />
+                    <label for="radioXxg" class="form-label">XXG</label>
+                </div>
+            </div>
+
+            <div class="col-auto d-flex justify-content-center">
+                <button 
+                type="submit" 
+                onclick="validationForm(); insert()" 
+                class="btn btn-primary mt-3"
+                
+                >
+                Enviar
+            </button>
+            </div>
+        </form>
+    </div>
+
+<h2 class="mb-4">Veja o que já temos:</h2>
+
+<div class="container">
+        <table class="table table-striped table-hover">
+            <thead class="brdThead">
+                <tr>
+                    <th scope="col">Nome da Convidada</th>
+                    <th scope="col">Marca da Fralda</th>
+                    <th scope="col">Linha/Categoria</th>
+                    <th scope="col">Tamanho do Pacote</th>
+                    <th scope="col">Quantidade de Fraldas por Pacote</th>
+                    <th scope="col">Tamanho da Fralda</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <th scope="row">Julia</th>
+                    <th scope="col">Pampers</th>
+                    <td scope="col">Premium Care</td>
+                    <td scope="col">Pequeno</td>
+                    <td scope="col">20</td>
+                    <td scope="col">RN</td>
+                </tr>
+                <tr>
+                    <th scope="row">Ana</th>
+                    <th scope="col">Huggies</th>
+                    <td scope="col">Supreme Care</td>
+                    <td scope="col">Grande</td>
+                    <td scope="col">80</td>
+                    <td scope="col">M</td>
+                </tr>
+                <tr>
+                    <th scope="row">Luiza</th>
+                    <th scope="col">Pampers</th>
+                    <td scope="col">Confort Sec</td>
+                    <td scope="col">Médio</td>
+                    <td scope="col">72</td>
+                    <td scope="col">P</td>
+                </tr>
+                <tr id="insertRow"></tr>
+</body>
+</html>
